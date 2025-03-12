@@ -1,4 +1,5 @@
 # Visual Studio
+# Visual Studio
 .vscode/
 .vs/
 *.code-workspace
@@ -64,3 +65,6 @@ __pycache__/
 # Ignore Clangd specific files
 .clangd/
 clangd-index/
+
+# Ignore x64/Debug folder
+x64/Debug/
