@@ -1,0 +1,39 @@
+\doxysection{Maze.\+h}
+\hypertarget{_maze_8h_source}{}\label{_maze_8h_source}\index{TP 13bis/Maze.h@{TP 13bis/Maze.h}}
+\mbox{\hyperlink{_maze_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_case_8h}{Case.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{using\ }\mbox{\hyperlink{_maze_8h_a116450581b39335a95daf3ffd782b870}{vec}}\ =\ std::vector<CCase::pCase>;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_c_maze_ac4bc2a1e184099dea5469cf099e1e158}{CMaze}}}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00032\ \ \ \ \ std::vector<vec>\ m\_Maze;\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{_maze_8h_a116450581b39335a95daf3ffd782b870}{vec}}\ m\_Path;\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{CCase::pCase}}\ m\_Start;\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{CCase::pCase}}\ m\_End;\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_c_maze_ac4bc2a1e184099dea5469cf099e1e158}{CMaze}}(\textcolor{keyword}{const}\ std::string\&\ maze,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\&\ Width,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\&\ Height);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_maze_a8680a0cd537747e712106eb16005dd97}{setStart}}(\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{CCase::pCase}}\&\ start);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_maze_a28abb9a783eb5d7251092c25b1a2bb60}{setEnd}}(\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{CCase::pCase}}\&\ end);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_c_maze_a87973906bd3bccd9bc1af99c1004ed64}{AddStep}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00067\ \ \ \ \ std::vector<vec>\ \mbox{\hyperlink{class_c_maze_aeb710bfd76a6b812eb3fd26150b919db}{getMaze}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_Maze;\ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{_maze_8h_a116450581b39335a95daf3ffd782b870}{vec}}\ \mbox{\hyperlink{class_c_maze_a300dee72b74e512732ca55d6d621d546}{getPath}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_Path;\ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{CCase::pCase}}\ \mbox{\hyperlink{class_c_maze_a3cd37e9dae6a4239db876620bbab9ba6}{getStart}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_Start;\ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{CCase::pCase}}\ \mbox{\hyperlink{class_c_maze_abdd7fa40fb53f5f2e3c941810e2dc086}{getEnd}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_End;\ \}}
+\DoxyCodeLine{00086\ \};}
+
+\end{DoxyCode}

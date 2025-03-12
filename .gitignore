@@ -1,0 +1,66 @@
+# Visual Studio
+.vscode/
+.vs/
+*.code-workspace
+
+# Build
+Debug/
+Release/
+build/
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.idb
+*.lib
+*.exp
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+
+# User-specific files
+*.user
+*.suo
+*.sdf
+*.ipch
+*.ncb
+*.opendb
+*.VC.db
+
+# Logs
+*.log
+*.tlog
+*.lastbuildstate
+
+# Generated files
+*.pch
+*.iobj
+*.ipdb
+
+# Ignore Visual Studio Code workspace settings
+.vscode/settings.json
+
+# Ignore compiled Python scripts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore package managers
+.vcpkg/
+
+# Ignore Clangd specific files
+.clangd/
+clangd-index/
