@@ -1,0 +1,8 @@
+warning: source './TP 01' is not a readable file or directory... skipping.
+C:/Users/Woazim/Documents/Enseignement/2022-2023/POOenCPP/TPs/TP 13bis - classes et objets/VEtudiant/TP 13bis/prog.cpp(57) : Doxygen warning 0001 : warning: Illegal command \n found as part of a \p command
+C:/Users/Woazim/Documents/Enseignement/2022-2023/POOenCPP/TPs/TP 13bis - classes et objets/VEtudiant/TP 13bis/prog.cpp(58) : Doxygen warning 0001 : warning: Illegal command \n found as part of a \p command
+C:/Users/Woazim/Documents/Enseignement/2022-2023/POOenCPP/TPs/TP 13bis - classes et objets/VEtudiant/TP 13bis/prog.cpp(97) : Doxygen warning 0001 : warning: included file prog.cpp is not found. Check your EXAMPLE_PATH
+C:/Users/Woazim/Documents/Enseignement/2022-2023/POOenCPP/TPs/TP 13bis - classes et objets/VEtudiant/TP 13bis/prog.cpp(97) : Doxygen warning 0001 : warning: block marked with [main] for \snippet should appear twice in file prog.cpp, found it 0 times
+
+todo(29) : Doxygen warning 0001 : warning: Illegal command \n found as part of a \p command
+todo(30) : Doxygen warning 0001 : warning: Illegal command \n found as part of a \p command

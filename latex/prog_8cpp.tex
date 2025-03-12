@@ -1,0 +1,93 @@
+\doxysection{TP 13bis/prog.cpp File Reference}
+\hypertarget{prog_8cpp}{}\label{prog_8cpp}\index{TP 13bis/prog.cpp@{TP 13bis/prog.cpp}}
+
+
+Programme principal de la gestion du labyrinthe.  
+
+
+{\ttfamily \#include $<$Windows.\+h$>$}\newline
+{\ttfamily \#include $<$tchar.\+h$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$Lib\+Graph2.\+h$>$}\newline
+{\ttfamily \#include "{}maze.\+h"{}}\newline
+{\ttfamily \#include "{}Case.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int APIENTRY \mbox{\hyperlink{prog_8cpp_aaf5e7f94cc186f55d373ad6a6d311bcb}{\+\_\+t\+Win\+Main}} (HINSTANCE h\+Instance, HINSTANCE h\+Prev\+Instance, LPTSTR lp\+Cmd\+Line, int n\+Cmd\+Show)
+\begin{DoxyCompactList}\small\item\em Point d\textquotesingle{}entrée principal du programme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{prog_8cpp_a63a25514a6efc23629d18164dc70fd05}\label{prog_8cpp_a63a25514a6efc23629d18164dc70fd05} 
+const CSize {\bfseries g\+\_\+sz\+Case} \{ 30, 30 \}
+\begin{DoxyCompactList}\small\item\em Taille de l\textquotesingle{}affichage des cases. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Programme principal de la gestion du labyrinthe. 
+
+Ce fichier contient le point d\textquotesingle{}entrée principal du programme ainsi que l\textquotesingle{}initialisation et l\textquotesingle{}affichage du labyrinthe à l\textquotesingle{}aide de la bibliothèque Lib\+Graph2.
+
+\begin{DoxyAuthor}{Author}
+Benjamin ALBOUY-\/\+KISSI 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2015 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{prog_8cpp_aaf5e7f94cc186f55d373ad6a6d311bcb}\index{prog.cpp@{prog.cpp}!\_tWinMain@{\_tWinMain}}
+\index{\_tWinMain@{\_tWinMain}!prog.cpp@{prog.cpp}}
+\doxysubsubsection{\texorpdfstring{\_tWinMain()}{\_tWinMain()}}
+{\footnotesize\ttfamily \label{prog_8cpp_aaf5e7f94cc186f55d373ad6a6d311bcb} 
+int APIENTRY \+\_\+t\+Win\+Main (\begin{DoxyParamCaption}\item[{HINSTANCE}]{h\+Instance}{, }\item[{HINSTANCE}]{h\+Prev\+Instance}{, }\item[{LPTSTR}]{lp\+Cmd\+Line}{, }\item[{int}]{n\+Cmd\+Show}{}\end{DoxyParamCaption})}
+
+
+
+Point d\textquotesingle{}entrée principal du programme. 
+
+Initialise la bibliothèque graphique, crée le labyrinthe et gère les événements.
+
+
+\begin{DoxyParams}{Parameters}
+{\em h\+Instance} & Instance de l\textquotesingle{}application (non utilisé) \\
+\hline
+{\em h\+Prev\+Instance} & Ancienne instance de l\textquotesingle{}application (non utilisé) \\
+\hline
+{\em lp\+Cmd\+Line} & Paramètres de la ligne de commande (non utilisé) \\
+\hline
+{\em n\+Cmd\+Show} & Indicateur d\textquotesingle{}affichage de la fenêtre (non utilisé) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne 0 à la fin de l\textquotesingle{}exécution du programme. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]1) Création des cases A, B, C et D et définition de leurs connexions \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000002}{Todo}}]4) Création de l\textquotesingle{}objet \doxylink{class_c_maze}{CMaze} représentant le labyrinthe \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000003}{Todo}}]5) Initialisation des cases de départ et d\textquotesingle{}arrivée \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000004}{Todo}}]6) Dessiner chaque case du labyrinthe \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000005}{Todo}}]8) Dessiner le chemin de résolution \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000006}{Todo}}]9) Affichage des images de départ, arrivée et position actuelle \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000007}{Todo}}]7) Effectuer une étape de l\textquotesingle{}algorithme de résolution \end{DoxyRefDesc}

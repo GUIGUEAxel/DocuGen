@@ -1,0 +1,163 @@
+\doxysection{CMaze Class Reference}
+\hypertarget{class_c_maze}{}\label{class_c_maze}\index{CMaze@{CMaze}}
+
+
+Classe représentant un labyrinthe.  
+
+
+
+
+{\ttfamily \#include $<$Maze.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_maze_ac4bc2a1e184099dea5469cf099e1e158}{CMaze}} (const std\+::string \&maze, const size\+\_\+t \&Width, const size\+\_\+t \&Height)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \doxylink{class_c_maze}{CMaze}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_maze_a8680a0cd537747e712106eb16005dd97}{set\+Start}} (\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{CCase\+::p\+Case}} \&start)
+\begin{DoxyCompactList}\small\item\em Définit la case de départ du labyrinthe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_maze_a28abb9a783eb5d7251092c25b1a2bb60}{set\+End}} (\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{CCase\+::p\+Case}} \&end)
+\begin{DoxyCompactList}\small\item\em Définit la case d\textquotesingle{}arrivée du labyrinthe. \end{DoxyCompactList}\item 
+\Hypertarget{class_c_maze_a87973906bd3bccd9bc1af99c1004ed64}\label{class_c_maze_a87973906bd3bccd9bc1af99c1004ed64} 
+void {\bfseries Add\+Step} ()
+\begin{DoxyCompactList}\small\item\em Ajoute une étape dans la résolution du labyrinthe. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{_maze_8h_a116450581b39335a95daf3ffd782b870}{vec}} $>$ \mbox{\hyperlink{class_c_maze_aeb710bfd76a6b812eb3fd26150b919db}{get\+Maze}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la grille du labyrinthe. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_maze_8h_a116450581b39335a95daf3ffd782b870}{vec}} \mbox{\hyperlink{class_c_maze_a300dee72b74e512732ca55d6d621d546}{get\+Path}} () const
+\begin{DoxyCompactList}\small\item\em Retourne le chemin suivi pour résoudre le labyrinthe. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{CCase\+::p\+Case}} \mbox{\hyperlink{class_c_maze_a3cd37e9dae6a4239db876620bbab9ba6}{get\+Start}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la case de départ du labyrinthe. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{CCase\+::p\+Case}} \mbox{\hyperlink{class_c_maze_abdd7fa40fb53f5f2e3c941810e2dc086}{get\+End}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la case d\textquotesingle{}arrivée du labyrinthe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe représentant un labyrinthe. 
+
+Cette classe permet de stocker un labyrinthe sous forme de cases et propose des méthodes pour définir le point de départ, le point d’arrivée et avancer dans la résolution du labyrinthe. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_c_maze_ac4bc2a1e184099dea5469cf099e1e158}\index{CMaze@{CMaze}!CMaze@{CMaze}}
+\index{CMaze@{CMaze}!CMaze@{CMaze}}
+\doxysubsubsection{\texorpdfstring{CMaze()}{CMaze()}}
+{\footnotesize\ttfamily \label{class_c_maze_ac4bc2a1e184099dea5469cf099e1e158} 
+CMaze\+::\+CMaze (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{maze}{, }\item[{const size\+\_\+t \&}]{Width}{, }\item[{const size\+\_\+t \&}]{Height}{}\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \doxylink{class_c_maze}{CMaze}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em maze} & Représentation du labyrinthe sous forme de chaîne de caractères. \\
+\hline
+{\em Width} & Largeur du labyrinthe. \\
+\hline
+{\em Height} & Hauteur du labyrinthe.\\
+\hline
+{\em maze} & Représentation du labyrinthe sous forme de chaîne de caractères \\
+\hline
+{\em Width} & Largeur du labyrinthe \\
+\hline
+{\em Height} & Hauteur du labyrinthe \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_maze_abdd7fa40fb53f5f2e3c941810e2dc086}\index{CMaze@{CMaze}!getEnd@{getEnd}}
+\index{getEnd@{getEnd}!CMaze@{CMaze}}
+\doxysubsubsection{\texorpdfstring{getEnd()}{getEnd()}}
+{\footnotesize\ttfamily \label{class_c_maze_abdd7fa40fb53f5f2e3c941810e2dc086} 
+\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{CCase\+::p\+Case}} CMaze\+::get\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la case d\textquotesingle{}arrivée du labyrinthe. 
+
+\begin{DoxyReturn}{Returns}
+Un pointeur vers la case d\textquotesingle{}arrivée. 
+\end{DoxyReturn}
+\Hypertarget{class_c_maze_aeb710bfd76a6b812eb3fd26150b919db}\index{CMaze@{CMaze}!getMaze@{getMaze}}
+\index{getMaze@{getMaze}!CMaze@{CMaze}}
+\doxysubsubsection{\texorpdfstring{getMaze()}{getMaze()}}
+{\footnotesize\ttfamily \label{class_c_maze_aeb710bfd76a6b812eb3fd26150b919db} 
+std\+::vector$<$ \mbox{\hyperlink{_maze_8h_a116450581b39335a95daf3ffd782b870}{vec}} $>$ CMaze\+::get\+Maze (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la grille du labyrinthe. 
+
+\begin{DoxyReturn}{Returns}
+Un vecteur 2D contenant les cases du labyrinthe. 
+\end{DoxyReturn}
+\Hypertarget{class_c_maze_a300dee72b74e512732ca55d6d621d546}\index{CMaze@{CMaze}!getPath@{getPath}}
+\index{getPath@{getPath}!CMaze@{CMaze}}
+\doxysubsubsection{\texorpdfstring{getPath()}{getPath()}}
+{\footnotesize\ttfamily \label{class_c_maze_a300dee72b74e512732ca55d6d621d546} 
+\mbox{\hyperlink{_maze_8h_a116450581b39335a95daf3ffd782b870}{vec}} CMaze\+::get\+Path (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne le chemin suivi pour résoudre le labyrinthe. 
+
+\begin{DoxyReturn}{Returns}
+Un vecteur contenant les cases du chemin. 
+\end{DoxyReturn}
+\Hypertarget{class_c_maze_a3cd37e9dae6a4239db876620bbab9ba6}\index{CMaze@{CMaze}!getStart@{getStart}}
+\index{getStart@{getStart}!CMaze@{CMaze}}
+\doxysubsubsection{\texorpdfstring{getStart()}{getStart()}}
+{\footnotesize\ttfamily \label{class_c_maze_a3cd37e9dae6a4239db876620bbab9ba6} 
+\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{CCase\+::p\+Case}} CMaze\+::get\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la case de départ du labyrinthe. 
+
+\begin{DoxyReturn}{Returns}
+Un pointeur vers la case de départ. 
+\end{DoxyReturn}
+\Hypertarget{class_c_maze_a28abb9a783eb5d7251092c25b1a2bb60}\index{CMaze@{CMaze}!setEnd@{setEnd}}
+\index{setEnd@{setEnd}!CMaze@{CMaze}}
+\doxysubsubsection{\texorpdfstring{setEnd()}{setEnd()}}
+{\footnotesize\ttfamily \label{class_c_maze_a28abb9a783eb5d7251092c25b1a2bb60} 
+void CMaze\+::set\+End (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{CCase\+::p\+Case}} \&}]{end}{}\end{DoxyParamCaption})}
+
+
+
+Définit la case d\textquotesingle{}arrivée du labyrinthe. 
+
+Définit le point d\textquotesingle{}arrivée du labyrinthe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em end} & Pointeur vers la case d\textquotesingle{}arrivée.\\
+\hline
+{\em end} & Pointeur vers la case d\textquotesingle{}arrivée \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_c_maze_a8680a0cd537747e712106eb16005dd97}\index{CMaze@{CMaze}!setStart@{setStart}}
+\index{setStart@{setStart}!CMaze@{CMaze}}
+\doxysubsubsection{\texorpdfstring{setStart()}{setStart()}}
+{\footnotesize\ttfamily \label{class_c_maze_a8680a0cd537747e712106eb16005dd97} 
+void CMaze\+::set\+Start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{CCase\+::p\+Case}} \&}]{start}{}\end{DoxyParamCaption})}
+
+
+
+Définit la case de départ du labyrinthe. 
+
+Définit le point de départ du labyrinthe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Pointeur vers la case de départ.\\
+\hline
+{\em start} & Pointeur vers la case de départ \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+TP 13bis/\mbox{\hyperlink{_maze_8h}{Maze.\+h}}\item 
+TP 13bis/\mbox{\hyperlink{_maze_8cpp}{Maze.\+cpp}}\end{DoxyCompactItemize}

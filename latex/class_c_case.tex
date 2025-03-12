@@ -1,0 +1,296 @@
+\doxysection{CCase Class Reference}
+\hypertarget{class_c_case}{}\label{class_c_case}\index{CCase@{CCase}}
+
+
+Représente une case du labyrinthe.  
+
+
+
+
+{\ttfamily \#include $<$Case.\+h$>$}
+
+Inheritance diagram for CCase\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_case}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}\label{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8} 
+using {\bfseries p\+Case} = std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_c_case}{CCase}}$>$
+\begin{DoxyCompactList}\small\item\em Alias pour un pointeur partagé vers une case. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_c_case_a432dfdb68e5bbbe94cb29387993ab710}{set\+Pos}} (size\+\_\+t X, size\+\_\+t Y)
+\begin{DoxyCompactList}\small\item\em Définit la position de la case. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_c_case_ae5600bd702d96322c202175403160dc2}{get\+PosX}} ()
+\begin{DoxyCompactList}\small\item\em Récupère la position X de la case. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_c_case_aec58c61e49c62fa713824b2ba8308f35}{get\+PosY}} ()
+\begin{DoxyCompactList}\small\item\em Récupère la position Y de la case. \end{DoxyCompactList}\item 
+\Hypertarget{class_c_case_ad3f9e1a89d148be5dc6a46433a2517f2}\label{class_c_case_ad3f9e1a89d148be5dc6a46433a2517f2} 
+void {\bfseries is\+Visited} ()
+\begin{DoxyCompactList}\small\item\em Marque la case comme visitée. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_c_case_a9811bb33813c101067a7793a46c52833}{get\+Visited}} () const
+\begin{DoxyCompactList}\small\item\em Vérifie si la case a été visitée. \end{DoxyCompactList}\item 
+\Hypertarget{class_c_case_a64e44861760632611795076ec02a4e4e}\label{class_c_case_a64e44861760632611795076ec02a4e4e} 
+void {\bfseries is\+Wrong\+Choice} ()
+\begin{DoxyCompactList}\small\item\em Marque la case comme un mauvais choix. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_c_case_a91b4f8de16d7e04286104ed67b594a3d}{get\+Wrong\+Choice}} () const
+\begin{DoxyCompactList}\small\item\em Vérifie si la case fait partie d\textquotesingle{}un mauvais choix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_case_a8793a83887a8b05156101a0506934a12}{set\+Top\+Neight\+Bors}} (\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{p\+Case}} pcase)
+\begin{DoxyCompactList}\small\item\em Définit la case voisine du haut. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_case_a42a1a7cdd13bf57e06c4d0ddb267e2e5}{set\+Right\+Neight\+Bors}} (\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{p\+Case}} pcase)
+\begin{DoxyCompactList}\small\item\em Définit la case voisine de droite. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_case_a677979faac4095958b8cbb17c0f24f2e}{set\+Bottom\+Neight\+Bors}} (\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{p\+Case}} pcase)
+\begin{DoxyCompactList}\small\item\em Définit la case voisine du bas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_case_a2a8c4e682b5023a7345c55924c31d338}{set\+Left\+Neight\+Bors}} (\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{p\+Case}} pcase)
+\begin{DoxyCompactList}\small\item\em Définit la case voisine de gauche. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{p\+Case}} \mbox{\hyperlink{class_c_case_af4b0db077a835d85837666fe5de9e35e}{get\+Top\+Neight\+Bors}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la case voisine du haut. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{p\+Case}} \mbox{\hyperlink{class_c_case_ad53536778cd5b62c3e779ae6aded287d}{get\+Right\+Neight\+Bors}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la case voisine de droite. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{p\+Case}} \mbox{\hyperlink{class_c_case_a982710bc5193564cd9aa7d57273bc9f1}{get\+Bottom\+Neight\+Bors}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la case voisine du bas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{p\+Case}} \mbox{\hyperlink{class_c_case_a73feefa2bf7463c52325ddd846379aef}{get\+Left\+Neight\+Bors}} () const
+\begin{DoxyCompactList}\small\item\em Retourne la case voisine de gauche. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_case_ae7bf9f4a70e03ebf699f0343eeb5d30e}{draw\+Case}} (const Lib\+Graph2\+::\+CSize \&) const
+\begin{DoxyCompactList}\small\item\em Dessine la case sur l\textquotesingle{}interface graphique. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Représente une case du labyrinthe. 
+
+Une case peut être connectée à ses voisins (haut, droite, bas, gauche) et stocke son état (visitée ou mauvais choix). Elle permet également d\textquotesingle{}être affichée graphiquement. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_case_ae7bf9f4a70e03ebf699f0343eeb5d30e}\index{CCase@{CCase}!drawCase@{drawCase}}
+\index{drawCase@{drawCase}!CCase@{CCase}}
+\doxysubsubsection{\texorpdfstring{drawCase()}{drawCase()}}
+{\footnotesize\ttfamily \label{class_c_case_ae7bf9f4a70e03ebf699f0343eeb5d30e} 
+void CCase\+::draw\+Case (\begin{DoxyParamCaption}\item[{const Lib\+Graph2\+::\+CSize \&}]{size\+Case}{}\end{DoxyParamCaption}) const}
+
+
+
+Dessine la case sur l\textquotesingle{}interface graphique. 
+
+Dessine une case dans le labyrinthe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size\+Case} & Taille de la case en pixels.\\
+\hline
+{\em size\+Case} & Taille d\textquotesingle{}une case à l\textquotesingle{}écran \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_c_case_a982710bc5193564cd9aa7d57273bc9f1}\index{CCase@{CCase}!getBottomNeightBors@{getBottomNeightBors}}
+\index{getBottomNeightBors@{getBottomNeightBors}!CCase@{CCase}}
+\doxysubsubsection{\texorpdfstring{getBottomNeightBors()}{getBottomNeightBors()}}
+{\footnotesize\ttfamily \label{class_c_case_a982710bc5193564cd9aa7d57273bc9f1} 
+\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{p\+Case}} CCase\+::get\+Bottom\+Neight\+Bors (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la case voisine du bas. 
+
+\begin{DoxyReturn}{Returns}
+Pointeur vers la case du bas. 
+\end{DoxyReturn}
+\Hypertarget{class_c_case_a73feefa2bf7463c52325ddd846379aef}\index{CCase@{CCase}!getLeftNeightBors@{getLeftNeightBors}}
+\index{getLeftNeightBors@{getLeftNeightBors}!CCase@{CCase}}
+\doxysubsubsection{\texorpdfstring{getLeftNeightBors()}{getLeftNeightBors()}}
+{\footnotesize\ttfamily \label{class_c_case_a73feefa2bf7463c52325ddd846379aef} 
+\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{p\+Case}} CCase\+::get\+Left\+Neight\+Bors (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la case voisine de gauche. 
+
+\begin{DoxyReturn}{Returns}
+Pointeur vers la case de gauche. 
+\end{DoxyReturn}
+\Hypertarget{class_c_case_ae5600bd702d96322c202175403160dc2}\index{CCase@{CCase}!getPosX@{getPosX}}
+\index{getPosX@{getPosX}!CCase@{CCase}}
+\doxysubsubsection{\texorpdfstring{getPosX()}{getPosX()}}
+{\footnotesize\ttfamily \label{class_c_case_ae5600bd702d96322c202175403160dc2} 
+size\+\_\+t CCase\+::get\+PosX (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Récupère la position X de la case. 
+
+\begin{DoxyReturn}{Returns}
+Coordonnée X. 
+\end{DoxyReturn}
+\Hypertarget{class_c_case_aec58c61e49c62fa713824b2ba8308f35}\index{CCase@{CCase}!getPosY@{getPosY}}
+\index{getPosY@{getPosY}!CCase@{CCase}}
+\doxysubsubsection{\texorpdfstring{getPosY()}{getPosY()}}
+{\footnotesize\ttfamily \label{class_c_case_aec58c61e49c62fa713824b2ba8308f35} 
+size\+\_\+t CCase\+::get\+PosY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Récupère la position Y de la case. 
+
+\begin{DoxyReturn}{Returns}
+Coordonnée Y. 
+\end{DoxyReturn}
+\Hypertarget{class_c_case_ad53536778cd5b62c3e779ae6aded287d}\index{CCase@{CCase}!getRightNeightBors@{getRightNeightBors}}
+\index{getRightNeightBors@{getRightNeightBors}!CCase@{CCase}}
+\doxysubsubsection{\texorpdfstring{getRightNeightBors()}{getRightNeightBors()}}
+{\footnotesize\ttfamily \label{class_c_case_ad53536778cd5b62c3e779ae6aded287d} 
+\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{p\+Case}} CCase\+::get\+Right\+Neight\+Bors (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la case voisine de droite. 
+
+\begin{DoxyReturn}{Returns}
+Pointeur vers la case de droite. 
+\end{DoxyReturn}
+\Hypertarget{class_c_case_af4b0db077a835d85837666fe5de9e35e}\index{CCase@{CCase}!getTopNeightBors@{getTopNeightBors}}
+\index{getTopNeightBors@{getTopNeightBors}!CCase@{CCase}}
+\doxysubsubsection{\texorpdfstring{getTopNeightBors()}{getTopNeightBors()}}
+{\footnotesize\ttfamily \label{class_c_case_af4b0db077a835d85837666fe5de9e35e} 
+\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{p\+Case}} CCase\+::get\+Top\+Neight\+Bors (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retourne la case voisine du haut. 
+
+\begin{DoxyReturn}{Returns}
+Pointeur vers la case du haut. 
+\end{DoxyReturn}
+\Hypertarget{class_c_case_a9811bb33813c101067a7793a46c52833}\index{CCase@{CCase}!getVisited@{getVisited}}
+\index{getVisited@{getVisited}!CCase@{CCase}}
+\doxysubsubsection{\texorpdfstring{getVisited()}{getVisited()}}
+{\footnotesize\ttfamily \label{class_c_case_a9811bb33813c101067a7793a46c52833} 
+bool CCase\+::get\+Visited (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Vérifie si la case a été visitée. 
+
+\begin{DoxyReturn}{Returns}
+true si la case a été visitée, sinon false. 
+\end{DoxyReturn}
+\Hypertarget{class_c_case_a91b4f8de16d7e04286104ed67b594a3d}\index{CCase@{CCase}!getWrongChoice@{getWrongChoice}}
+\index{getWrongChoice@{getWrongChoice}!CCase@{CCase}}
+\doxysubsubsection{\texorpdfstring{getWrongChoice()}{getWrongChoice()}}
+{\footnotesize\ttfamily \label{class_c_case_a91b4f8de16d7e04286104ed67b594a3d} 
+bool CCase\+::get\+Wrong\+Choice (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Vérifie si la case fait partie d\textquotesingle{}un mauvais choix. 
+
+\begin{DoxyReturn}{Returns}
+true si la case est un mauvais choix, sinon false. 
+\end{DoxyReturn}
+\Hypertarget{class_c_case_a677979faac4095958b8cbb17c0f24f2e}\index{CCase@{CCase}!setBottomNeightBors@{setBottomNeightBors}}
+\index{setBottomNeightBors@{setBottomNeightBors}!CCase@{CCase}}
+\doxysubsubsection{\texorpdfstring{setBottomNeightBors()}{setBottomNeightBors()}}
+{\footnotesize\ttfamily \label{class_c_case_a677979faac4095958b8cbb17c0f24f2e} 
+void CCase\+::set\+Bottom\+Neight\+Bors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{p\+Case}}}]{pcase}{}\end{DoxyParamCaption})}
+
+
+
+Définit la case voisine du bas. 
+
+Définit le voisin du bas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pcase} & Pointeur vers la case du bas.\\
+\hline
+{\em pcase} & Pointeur vers la case voisine \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_c_case_a2a8c4e682b5023a7345c55924c31d338}\index{CCase@{CCase}!setLeftNeightBors@{setLeftNeightBors}}
+\index{setLeftNeightBors@{setLeftNeightBors}!CCase@{CCase}}
+\doxysubsubsection{\texorpdfstring{setLeftNeightBors()}{setLeftNeightBors()}}
+{\footnotesize\ttfamily \label{class_c_case_a2a8c4e682b5023a7345c55924c31d338} 
+void CCase\+::set\+Left\+Neight\+Bors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{p\+Case}}}]{pcase}{}\end{DoxyParamCaption})}
+
+
+
+Définit la case voisine de gauche. 
+
+Définit le voisin de gauche.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pcase} & Pointeur vers la case de gauche.\\
+\hline
+{\em pcase} & Pointeur vers la case voisine \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_c_case_a432dfdb68e5bbbe94cb29387993ab710}\index{CCase@{CCase}!setPos@{setPos}}
+\index{setPos@{setPos}!CCase@{CCase}}
+\doxysubsubsection{\texorpdfstring{setPos()}{setPos()}}
+{\footnotesize\ttfamily \label{class_c_case_a432dfdb68e5bbbe94cb29387993ab710} 
+void CCase\+::set\+Pos (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{X}{, }\item[{size\+\_\+t}]{Y}{}\end{DoxyParamCaption})}
+
+
+
+Définit la position de la case. 
+
+Définit la position d\textquotesingle{}une case dans le labyrinthe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & Coordonnée X. \\
+\hline
+{\em Y} & Coordonnée Y.\\
+\hline
+{\em X} & Coordonnée X de la case \\
+\hline
+{\em Y} & Coordonnée Y de la case \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_c_case_a42a1a7cdd13bf57e06c4d0ddb267e2e5}\index{CCase@{CCase}!setRightNeightBors@{setRightNeightBors}}
+\index{setRightNeightBors@{setRightNeightBors}!CCase@{CCase}}
+\doxysubsubsection{\texorpdfstring{setRightNeightBors()}{setRightNeightBors()}}
+{\footnotesize\ttfamily \label{class_c_case_a42a1a7cdd13bf57e06c4d0ddb267e2e5} 
+void CCase\+::set\+Right\+Neight\+Bors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{p\+Case}}}]{pcase}{}\end{DoxyParamCaption})}
+
+
+
+Définit la case voisine de droite. 
+
+Définit le voisin de droite.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pcase} & Pointeur vers la case de droite.\\
+\hline
+{\em pcase} & Pointeur vers la case voisine \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_c_case_a8793a83887a8b05156101a0506934a12}\index{CCase@{CCase}!setTopNeightBors@{setTopNeightBors}}
+\index{setTopNeightBors@{setTopNeightBors}!CCase@{CCase}}
+\doxysubsubsection{\texorpdfstring{setTopNeightBors()}{setTopNeightBors()}}
+{\footnotesize\ttfamily \label{class_c_case_a8793a83887a8b05156101a0506934a12} 
+void CCase\+::set\+Top\+Neight\+Bors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_case_a55cab9d2b7d66820939e4d1c00ee05e8}{p\+Case}}}]{pcase}{}\end{DoxyParamCaption})}
+
+
+
+Définit la case voisine du haut. 
+
+Définit le voisin du haut.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pcase} & Pointeur vers la case du haut.\\
+\hline
+{\em pcase} & Pointeur vers la case voisine \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+TP 13bis/\mbox{\hyperlink{_case_8h}{Case.\+h}}\item 
+TP 13bis/\mbox{\hyperlink{_case_8cpp}{Case.\+cpp}}\end{DoxyCompactItemize}

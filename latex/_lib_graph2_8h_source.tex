@@ -1,0 +1,383 @@
+\doxysection{Lib\+Graph2.\+h}
+\hypertarget{_lib_graph2_8h_source}{}\label{_lib_graph2_8h_source}\index{TP 13bis/inc/LibGraph2.h@{TP 13bis/inc/LibGraph2.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//Copyright\ 2010-\/2020\ Benjamin\ ALBOUY-\/KISSI}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ \ \ \ This\ file\ is\ part\ of\ LibGraph.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ \ \ LibGraph\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ \ \ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ \ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ \ \ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ \ \ LibGraph\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ \ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ \ \ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ \ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ along\ with\ LibGraph.\ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//Documentation\ de\ la\ page\ principale}}
+\DoxyCodeLine{00390\ }
+\DoxyCodeLine{00456\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00457\ \textcolor{comment}{//\ Le\ bloc\ ifdef\ suivant\ est\ la\ façon\ standard\ de\ créer\ des\ macros\ qui\ facilitent\ l'exportation\ }}
+\DoxyCodeLine{00458\ \textcolor{comment}{//\ à\ partir\ d'une\ DLL.\ Tous\ les\ fichiers\ contenus\ dans\ cette\ DLL\ sont\ compilés\ avec\ le\ symbole\ BEAUH\_EXPORTS}}
+\DoxyCodeLine{00459\ \textcolor{comment}{//\ défini\ sur\ la\ ligne\ de\ commande.\ Ce\ symbole\ ne\ doit\ pas\ être\ défini\ dans\ les\ projets}}
+\DoxyCodeLine{00460\ \textcolor{comment}{//\ qui\ utilisent\ cette\ DLL.\ De\ cette\ manière,\ les\ autres\ projets\ dont\ les\ fichiers\ sources\ comprennent\ ce\ fichier\ considèrent\ les\ fonctions\ }}
+\DoxyCodeLine{00461\ \textcolor{comment}{//\ BEAUH\_API\ comme\ étant\ importées\ à\ partir\ d'une\ DLL,\ tandis\ que\ cette\ DLL\ considère\ les\ symboles}}
+\DoxyCodeLine{00462\ \textcolor{comment}{//\ définis\ avec\ cette\ macro\ comme\ étant\ exportés}}
+\DoxyCodeLine{00463\ \textcolor{preprocessor}{\#ifdef\ LIBGRAPH2\_EXPORTS}}
+\DoxyCodeLine{00464\ \textcolor{preprocessor}{\#define\ LIBGRAPH2\_API\ \_\_declspec(dllexport)}}
+\DoxyCodeLine{00465\ \textcolor{preprocessor}{\#define\ LIBGRAPH2\_LEVEL\ 4}}
+\DoxyCodeLine{00466\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00467\ \textcolor{preprocessor}{\#define\ LIBGRAPH2\_API\ \_\_declspec(dllimport)}}
+\DoxyCodeLine{00468\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00470\ \textcolor{preprocessor}{\#pragma\ warning(push)}}
+\DoxyCodeLine{00471\ \textcolor{preprocessor}{\#pragma\ warning(disable\ :\ 4996)}}
+\DoxyCodeLine{00472\ }
+\DoxyCodeLine{00473\ \textcolor{comment}{//définition\ des\ niveaux\ de\ LibGraph}}
+\DoxyCodeLine{00474\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00475\ \textcolor{comment}{\ \ NIVEAU\ |\ Description}}
+\DoxyCodeLine{00476\ \textcolor{comment}{\ \ \ \ 0\ \ \ \ \ \ Novice\ :\ Aucun\ pointeur,\ aucun\ objet,\ pas\ de\ passage\ par\ référence,\ seulement\ des\ appels\ de\ fonctions}}
+\DoxyCodeLine{00477\ \textcolor{comment}{\ \ \ \ 1\ \ \ \ \ \ Débutant\ :\ Des\ passages\ par\ références,\ pas\ de\ pointeurs,\ pas\ d'objet}}
+\DoxyCodeLine{00478\ \textcolor{comment}{\ \ \ \ 2\ \ \ \ \ \ Intermédiaire\ :\ Des\ passages\ par\ références,\ des\ pointeurs,\ pas\ d'objet}}
+\DoxyCodeLine{00479\ \textcolor{comment}{\ \ \ \ 3\ \ \ \ \ \ Avancé\ :\ Quelques\ objets}}
+\DoxyCodeLine{00480\ \textcolor{comment}{\ \ \ \ 4\ \ \ \ \ \ Expert\ :\ Tout\ objet}}
+\DoxyCodeLine{00481\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00482\ \textcolor{preprocessor}{\#ifndef\ LIBGRAPH2\_LEVEL}}
+\DoxyCodeLine{00483\ \textcolor{preprocessor}{\#define\ LIBGRAPH2\_LEVEL\ 4}}
+\DoxyCodeLine{00484\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00485\ \textcolor{preprocessor}{\#pragma\ comment(linker,"{}\(\backslash\)"{}/manifestdependency:type='win32'\ name='Microsoft.Windows.Common-\/Controls'\ version='6.0.0.0'\ processorArchitecture='*'\ publicKeyToken='6595b64144ccf1df'\ language='*'\(\backslash\)"{}"{})}}
+\DoxyCodeLine{00486\ }
+\DoxyCodeLine{00487\ \textcolor{preprocessor}{\#include\ <Windows.h>}}
+\DoxyCodeLine{00488\ \textcolor{preprocessor}{\#include\ <tchar.h>}}
+\DoxyCodeLine{00489\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{00490\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00491\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00492\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00493\ \textcolor{preprocessor}{\#include\ <locale>}}
+\DoxyCodeLine{00494\ \textcolor{preprocessor}{\#include\ <codecvt>}}
+\DoxyCodeLine{00495\ }
+\DoxyCodeLine{00496\ \textcolor{comment}{//Définition\ des\ groupes\ de\ documentation}}
+\DoxyCodeLine{00497\ \textcolor{comment}{//Groupes\ de\ niveaux\ supérieurs}}
+\DoxyCodeLine{00537\ \textcolor{preprocessor}{\#if\ LIBGRAPH2\_LEVEL>=3}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00547\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00548\ }
+\DoxyCodeLine{00550\ }
+\DoxyCodeLine{00568\ \textcolor{preprocessor}{\#if\ LIBGRAPH2\_LEVEL>=1}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00575\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00576\ \textcolor{preprocessor}{\#if\ LIBGRAPH2\_LEVEL>=3}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00580\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00581\ }
+\DoxyCodeLine{00586\ \textcolor{keyword}{namespace\ }LibGraph2}
+\DoxyCodeLine{00587\ \{}
+\DoxyCodeLine{00604\ \ \ \textcolor{keyword}{typedef}\ DWORD\ ARGB;}
+\DoxyCodeLine{00605\ }
+\DoxyCodeLine{00613\ \ \ \textcolor{keyword}{enum\ class}\ evt\_type\ \{}
+\DoxyCodeLine{00615\ \ \ \ \ evtMouseDown,}
+\DoxyCodeLine{00617\ \ \ \ \ evtMouseUp,}
+\DoxyCodeLine{00619\ \ \ \ \ evtMouseMove,}
+\DoxyCodeLine{00621\ \ \ \ \ evtKeyDown,}
+\DoxyCodeLine{00623\ \ \ \ \ evtKeyUp,}
+\DoxyCodeLine{00625\ \ \ \ \ evtRefresh,}
+\DoxyCodeLine{00627\ \ \ \ \ evtSize,}
+\DoxyCodeLine{00629\ \ \ \ \ evtClose,}
+\DoxyCodeLine{00630\ \ \ \};}
+\DoxyCodeLine{00631\ }
+\DoxyCodeLine{00639\ \ \ \textcolor{keyword}{enum\ class}\ pen\_DashStyles\ \{}
+\DoxyCodeLine{00641\ \ \ \ \ Solid,}
+\DoxyCodeLine{00643\ \ \ \ \ Dash,}
+\DoxyCodeLine{00645\ \ \ \ \ Dot,}
+\DoxyCodeLine{00647\ \ \ \ \ DashDot,}
+\DoxyCodeLine{00649\ \ \ \ \ DashDotDot}
+\DoxyCodeLine{00650\ \ \ \};}
+\DoxyCodeLine{00651\ }
+\DoxyCodeLine{00659\ \ \ \textcolor{keyword}{enum}\ font\_styles\ \{}
+\DoxyCodeLine{00661\ \ \ \ \ FontStyleRegular\ \ \ \ \ \ =\ 0,}
+\DoxyCodeLine{00663\ \ \ \ \ FontStyleBold\ \ \ \ \ \ \ \ \ =\ 1,}
+\DoxyCodeLine{00665\ \ \ \ \ FontStyleItalic\ \ \ \ \ \ \ =\ 2,}
+\DoxyCodeLine{00667\ \ \ \ \ FontStyleBoldItalic\ \ \ =\ 3}
+\DoxyCodeLine{00668\ \ \ \};}
+\DoxyCodeLine{00669\ }
+\DoxyCodeLine{00670\ \textcolor{preprocessor}{\#if\ LIBGRAPH2\_LEVEL>=1}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00678\ \ \ \textcolor{keyword}{enum\ class}\ msgbtn\_types\ \{}
+\DoxyCodeLine{00680\ \ \ \ \ MsgBtnAbortRetryIgnore\ \ \ \ \ =\ 0x2L,}
+\DoxyCodeLine{00682\ \ \ \ \ MsgBtnCancelTryContinue\ \ =\ 0x6L,}
+\DoxyCodeLine{00684\ \ \ \ \ MsgBtnOK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x0L,}
+\DoxyCodeLine{00686\ \ \ \ \ MsgBtnOKCancel\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x1L,}
+\DoxyCodeLine{00688\ \ \ \ \ MsgBtnRetryCancel\ \ \ \ \ \ \ \ \ \ =\ 0x5L,}
+\DoxyCodeLine{00690\ \ \ \ \ MsgBtnYesNo\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x4L,}
+\DoxyCodeLine{00692\ \ \ \ \ MsgBtnYesNoCancel\ \ \ \ \ \ \ \ \ \ =\ 0x3L}
+\DoxyCodeLine{00693\ \ \ \};}
+\DoxyCodeLine{00694\ }
+\DoxyCodeLine{00702\ \ \ \textcolor{keyword}{enum\ class}\ msgicon\_types\ \{}
+\DoxyCodeLine{00704\ \ \ \ \ MsgIcnNone\ \ \ \ \ \ \ \ =\ 0x00L,}
+\DoxyCodeLine{00706\ \ \ \ \ MsgIcnStop\ \ \ \ \ \ \ \ =\ 0x10L,}
+\DoxyCodeLine{00708\ \ \ \ \ MsgIcnQuestion\ \ \ \ =\ 0x20L,}
+\DoxyCodeLine{00710\ \ \ \ \ MsgIcnExclamation\ =\ 0x30L,}
+\DoxyCodeLine{00712\ \ \ \ \ MsgIcnInformation\ =\ 0x40L}
+\DoxyCodeLine{00713\ \ \ \};}
+\DoxyCodeLine{00714\ }
+\DoxyCodeLine{00722\ \ \ \textcolor{keyword}{enum\ class}\ msgdefbtn\_vals\ \{}
+\DoxyCodeLine{00724\ \ \ \ \ MsgDefBtn1\ =\ 0x000L,}
+\DoxyCodeLine{00726\ \ \ \ \ MsgDefBtn2\ =\ 0x100L,}
+\DoxyCodeLine{00728\ \ \ \ \ MsgDefBtn3\ =\ 0x200L,}
+\DoxyCodeLine{00730\ \ \ \ \ MsgDefBtn4\ =\ 0x300L}
+\DoxyCodeLine{00731\ \ \ \};}
+\DoxyCodeLine{00732\ }
+\DoxyCodeLine{00740\ \ \ \textcolor{keyword}{enum\ class}\ msgbtn\_answer\{}
+\DoxyCodeLine{00742\ \ \ \ \ MsgAnsError\ \ \ \ \ =\ 0,}
+\DoxyCodeLine{00744\ \ \ \ \ MsgAnsOk\ \ \ \ \ \ \ \ =\ 1,}
+\DoxyCodeLine{00746\ \ \ \ \ MsgAnsCancel\ \ \ \ =\ 2,}
+\DoxyCodeLine{00748\ \ \ \ \ MsgAnsAbort\ \ \ \ \ =\ 3,}
+\DoxyCodeLine{00750\ \ \ \ \ MsgAnsRetry\ \ \ \ \ =\ 4,}
+\DoxyCodeLine{00752\ \ \ \ \ MsgAnsIgnore\ \ \ \ =\ 5,}
+\DoxyCodeLine{00754\ \ \ \ \ MsgAnsYes\ \ \ \ \ \ \ =\ 6,}
+\DoxyCodeLine{00756\ \ \ \ \ MsgAnsNo\ \ \ \ \ \ \ \ =\ 7,}
+\DoxyCodeLine{00758\ \ \ \ \ MsgAnsTryagain\ \ =\ 10,}
+\DoxyCodeLine{00760\ \ \ \ \ MsgAnsContinue\ \ =\ 11}
+\DoxyCodeLine{00761\ \ \ \};}
+\DoxyCodeLine{00762\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00763\ }
+\DoxyCodeLine{00764\ \textcolor{preprocessor}{\#if\ LIBGRAPH2\_LEVEL\ >=\ 3\ ||\ defined(LIBGRAPH2\_EXPORTS)}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00777\ \ \ \textcolor{keyword}{struct\ }evt\{}
+\DoxyCodeLine{00779\ \ \ \ \ evt\_type\ type;}
+\DoxyCodeLine{00781\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x;}
+\DoxyCodeLine{00783\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y;}
+\DoxyCodeLine{00792\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ vkKeyCode;}
+\DoxyCodeLine{00793\ \ \ \};}
+\DoxyCodeLine{00794\ }
+\DoxyCodeLine{00811\ \ \ \textcolor{keyword}{class\ }CString\ }
+\DoxyCodeLine{00812\ \ \ \{}
+\DoxyCodeLine{00813\ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00814\ \ \ \ \ std::wstring\ m\_str;}
+\DoxyCodeLine{00815\ }
+\DoxyCodeLine{00816\ \ \ \ \ \textcolor{keywordtype}{void}\ ConvertFromChar(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ pCharText)}
+\DoxyCodeLine{00817\ \ \ \ \ \{}
+\DoxyCodeLine{00818\ \ \ \ \ \ \ std::wstring\_convert<std::codecvt\_utf8\_utf16<wchar\_t>>\ converter(\textcolor{stringliteral}{"{}?"{}},\ L\textcolor{stringliteral}{"{}?"{}});}
+\DoxyCodeLine{00819\ \ \ \ \ \ \ m\_str\ =\ converter.from\_bytes(pCharText);}
+\DoxyCodeLine{00820\ \ \ \ \ \}}
+\DoxyCodeLine{00821\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00831\ \ \ \ \ CString()\{\}}
+\DoxyCodeLine{00843\ \ \ \ \ CString(\textcolor{keyword}{const}\ std::wstring\&\ str)\ :\ m\_str(str)\{\}}
+\DoxyCodeLine{00855\ \ \ \ \ CString(\textcolor{keyword}{const}\ std::string\&\ str)\ \{ConvertFromChar(str.c\_str());\}}
+\DoxyCodeLine{00867\ \ \ \ \ CString(\textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}*\ str)\ :\ m\_str(str)\{\}}
+\DoxyCodeLine{00879\ \ \ \ \ CString(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str)\ \{ConvertFromChar(str);\}}
+\DoxyCodeLine{00893\ \ \ \ \ \textcolor{keyword}{operator}\ std::wstring()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ m\_str;\}}
+\DoxyCodeLine{00907\ \ \ \ \ \textcolor{keyword}{operator}\ std::wstring\&()\ \{\textcolor{keywordflow}{return}\ m\_str;\}}
+\DoxyCodeLine{00921\ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ std::string()\textcolor{keyword}{const\ }\{}
+\DoxyCodeLine{00922\ \ \ \ \ \ \ std::wstring\_convert<std::codecvt\_utf8\_utf16<wchar\_t>>\ converter(\textcolor{stringliteral}{"{}?"{}},\ L\textcolor{stringliteral}{"{}?"{}});}
+\DoxyCodeLine{00923\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ converter.to\_bytes(m\_str);}
+\DoxyCodeLine{00924\ \ \ \ \ \}}
+\DoxyCodeLine{00925\ }
+\DoxyCodeLine{00937\ \ \ \ \ std::wstring\ *operator-\/>()\ \{\textcolor{keywordflow}{return}\ \&m\_str;\}}
+\DoxyCodeLine{00949\ \ \ \ \ \textcolor{keyword}{const}\ std::wstring\ *operator-\/>()\textcolor{keyword}{const\ }\{\textcolor{keywordflow}{return}\ \&m\_str;\}}
+\DoxyCodeLine{00950\ \ \ \};}
+\DoxyCodeLine{00951\ }
+\DoxyCodeLine{00962\ \ \ \textcolor{keyword}{class\ }CPoint}
+\DoxyCodeLine{00963\ \ \ \{}
+\DoxyCodeLine{00964\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00977\ \ \ \ \ \textcolor{keyword}{explicit}\ CPoint(\textcolor{keywordtype}{float}\ x=0,\ \textcolor{keywordtype}{float}\ y=0):m\_fX(x),\ m\_fY(y)\{\}}
+\DoxyCodeLine{00981\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_fX;}
+\DoxyCodeLine{00985\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_fY;}
+\DoxyCodeLine{00986\ }
+\DoxyCodeLine{00997\ \ \ \ \ CPoint\&\ operator+=(\textcolor{keyword}{const}\ CPoint\&\ p)\ \{\ m\_fX\ +=\ p.m\_fX;\ m\_fY\ +=\ p.m\_fY;\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};\ \}}
+\DoxyCodeLine{00998\ }
+\DoxyCodeLine{01009\ \ \ \ \ CPoint\ operator+(\textcolor{keyword}{const}\ CPoint\&\ p)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ CPoint(*\textcolor{keyword}{this})\ +=\ p;\ \}}
+\DoxyCodeLine{01010\ }
+\DoxyCodeLine{01021\ \ \ \ \ CPoint\&\ operator-\/=(\textcolor{keyword}{const}\ CPoint\&\ p)\ \{\ m\_fX\ -\/=\ p.m\_fX;\ m\_fY\ -\/=\ p.m\_fY;\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};\ \}}
+\DoxyCodeLine{01022\ }
+\DoxyCodeLine{01033\ \ \ \ \ CPoint\ operator-\/(\textcolor{keyword}{const}\ CPoint\&\ p)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ CPoint(*\textcolor{keyword}{this})\ -\/=\ p;\ \}}
+\DoxyCodeLine{01034\ \ \ \};}
+\DoxyCodeLine{01035\ }
+\DoxyCodeLine{01046\ \ \ \textcolor{keyword}{class\ }CSize}
+\DoxyCodeLine{01047\ \ \ \{}
+\DoxyCodeLine{01048\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01061\ \ \ \ \ \textcolor{keyword}{explicit}\ CSize(\textcolor{keywordtype}{float}\ width=0,\ \textcolor{keywordtype}{float}\ height=0):m\_fWidth(width),\ m\_fHeight(height)\{\}}
+\DoxyCodeLine{01065\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_fWidth;}
+\DoxyCodeLine{01069\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_fHeight;}
+\DoxyCodeLine{01070\ \ \ \};}
+\DoxyCodeLine{01071\ }
+\DoxyCodeLine{01083\ \ \ \textcolor{keyword}{class\ }CRectangle}
+\DoxyCodeLine{01084\ \ \ \{}
+\DoxyCodeLine{01085\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01098\ \ \ \ \ CRectangle(\textcolor{keyword}{const}\ CPoint\&\ ptTopLeft\ =\ CPoint(),\ \textcolor{keyword}{const}\ CSize\&\ szSize\ =\ CSize()):m\_ptTopLeft(ptTopLeft),m\_szSize(szSize)\{\}}
+\DoxyCodeLine{01102\ \ \ \ \ CPoint\ m\_ptTopLeft;}
+\DoxyCodeLine{01106\ \ \ \ \ CSize\ m\_szSize;}
+\DoxyCodeLine{01107\ \ \ \};}
+\DoxyCodeLine{01108\ }
+\DoxyCodeLine{01109\ \textcolor{comment}{//Redéfinition\ de\ la\ classe\ pour\ le\ niveau\ Avancé}}
+\DoxyCodeLine{01110\ \textcolor{preprocessor}{\#if\ LIBGRAPH2\_LEVEL\ ==\ 3}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01122\ \textcolor{preprocessor}{\#define\ ILibGraph2\ ILibGraph2\_Adv}}
+\DoxyCodeLine{01123\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01124\ \textcolor{comment}{//Redéfinition\ de\ la\ classe\ pour\ le\ niveau\ Expert}}
+\DoxyCodeLine{01136\ \textcolor{preprocessor}{\#define\ ILibGraph2\ ILibGraph2\_Exp}}
+\DoxyCodeLine{01137\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01138\ }
+\DoxyCodeLine{01152\ \ \ \textcolor{keyword}{class\ }ILibGraph2\_Com}
+\DoxyCodeLine{01153\ \ \ \{}
+\DoxyCodeLine{01154\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01179\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ show(\textcolor{keyword}{const}\ CSize\&\ szWndSize\ =\ CSize(),\ \textcolor{keywordtype}{bool}\ bFullScreen=\textcolor{keyword}{false})\ =0;}
+\DoxyCodeLine{01191\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ hide()\ =0;}
+\DoxyCodeLine{01206\ \ \ \ \ \textcolor{keyword}{virtual}\ CSize\ getSize()\ =0;}
+\DoxyCodeLine{01207\ }
+\DoxyCodeLine{01225\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ showConsole()\ =0;}
+\DoxyCodeLine{01236\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ hideConsole()\ =0;}
+\DoxyCodeLine{01237\ }
+\DoxyCodeLine{01248\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ askForRefresh()\ =0;}
+\DoxyCodeLine{01282\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ waitForEvent(evt\&\ e)\ =0;}
+\DoxyCodeLine{01283\ }
+\DoxyCodeLine{01323\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ beginPaint()\ =0;}
+\DoxyCodeLine{01335\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ endPaint()\ =0;}
+\DoxyCodeLine{01336\ }
+\DoxyCodeLine{01352\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setPen(ARGB\ color,\ \textcolor{keywordtype}{float}\ fWidth,\ pen\_DashStyles\ style\ =\ pen\_DashStyles::Solid)\ =\ 0;}
+\DoxyCodeLine{01366\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setSolidBrush(ARGB\ color)\ =0;}
+\DoxyCodeLine{01380\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setTextureBrush(\textcolor{keyword}{const}\ CString\&\ sFileName)\ =0;}
+\DoxyCodeLine{01396\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setFont(\textcolor{keyword}{const}\ CString\&\ strFontName,\ \textcolor{keywordtype}{float}\ fPointSize,\ font\_styles\ nStyleFlags)=0;}
+\DoxyCodeLine{01397\ }
+\DoxyCodeLine{01411\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawEllipse(\textcolor{keyword}{const}\ CRectangle\&\ rectBounds)=0;}
+\DoxyCodeLine{01427\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawArc(\textcolor{keyword}{const}\ CRectangle\&\ rectBounds,\ \textcolor{keywordtype}{float}\ startAngle,\ \textcolor{keywordtype}{float}\ sweepAngle)\ =0;}
+\DoxyCodeLine{01443\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawPie(\textcolor{keyword}{const}\ CRectangle\&\ rectBounds,\ \textcolor{keywordtype}{float}\ startAngle,\ \textcolor{keywordtype}{float}\ sweepAngle)\ =0;}
+\DoxyCodeLine{01458\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawLine(\textcolor{keyword}{const}\ CPoint\&\ ptP1,\ \textcolor{keyword}{const}\ CPoint\&\ ptP2)\ =0;}
+\DoxyCodeLine{01472\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawRectangle(\textcolor{keyword}{const}\ CRectangle\&\ rectBounds)=0;}
+\DoxyCodeLine{01473\ }
+\DoxyCodeLine{01489\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setPixel(\textcolor{keyword}{const}\ CPoint\&\ ptPos,\ ARGB\ color)=0;}
+\DoxyCodeLine{01511\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawBitmap(\textcolor{keyword}{const}\ CString\&\ sFileName,\ \textcolor{keyword}{const}\ CPoint\&\ ptPos,\ \textcolor{keywordtype}{double}\ dScaleFactor\ =\ 1.0,\ \textcolor{keywordtype}{double}\ dAngleDeg=0,\ \textcolor{keywordtype}{bool}\ bXYIsCenter=\textcolor{keyword}{false})=0;}
+\DoxyCodeLine{01531\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawBitmap(\textcolor{keyword}{const}\ CString\&\ sFileName,\ \textcolor{keyword}{const}\ CPoint\&\ ptPos,\ \textcolor{keyword}{const}\ CPoint\&\ ptPosPivot,\ \textcolor{keywordtype}{double}\ dScaleFactor,\ \textcolor{keywordtype}{double}\ dAngleDeg)\ =0;}
+\DoxyCodeLine{01532\ }
+\DoxyCodeLine{01550\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawString(\textcolor{keyword}{const}\ CString\&\ text,\ \textcolor{keyword}{const}\ CPoint\&\ ptPos)=0;}
+\DoxyCodeLine{01566\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ getStringDimension(\textcolor{keyword}{const}\ CString\&\ text,\ \textcolor{keyword}{const}\ CPoint\&\ ptPos,\ CRectangle\&\ rectBounds)=0;}
+\DoxyCodeLine{01567\ }
+\DoxyCodeLine{01585\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ guiGetColor(ARGB\&\ color)=0;}
+\DoxyCodeLine{01608\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ guiGetPenStyle(ARGB\&\ color,\ \textcolor{keywordtype}{float}\&\ fWidth,\ pen\_DashStyles\&\ style)=0;}
+\DoxyCodeLine{01626\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ guiGetValue(\textcolor{keywordtype}{int}\&\ nVal,\ \textcolor{keyword}{const}\ CString\&\ strTitle=L\textcolor{stringliteral}{"{}"{}},\ \textcolor{keyword}{const}\ CString\&\ strLabel=L\textcolor{stringliteral}{"{}"{}})=0;}
+\DoxyCodeLine{01644\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ guiGetValue(\textcolor{keywordtype}{double}\&\ dVal,\ \textcolor{keyword}{const}\ CString\&\ strTitle=L\textcolor{stringliteral}{"{}"{}},\ \textcolor{keyword}{const}\ CString\&\ strLabel=L\textcolor{stringliteral}{"{}"{}})=0;}
+\DoxyCodeLine{01662\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ guiGetValue(CString\&\ strVal,\ \textcolor{keyword}{const}\ CString\&\ strTitle=L\textcolor{stringliteral}{"{}"{}},\ \textcolor{keyword}{const}\ CString\&\ strLabel=L\textcolor{stringliteral}{"{}"{}})=0;}
+\DoxyCodeLine{01682\ \ \ \ \ \textcolor{keyword}{virtual}\ msgbtn\_answer\ guiMessageBox(}
+\DoxyCodeLine{01683\ \ \ \ \ \ \ \textcolor{keyword}{const}\ CString\&\ strTitle\ =\ L\textcolor{stringliteral}{"{}"{}},\ }
+\DoxyCodeLine{01684\ \ \ \ \ \ \ \textcolor{keyword}{const}\ CString\&\ strText\ =\ L\textcolor{stringliteral}{"{}"{}},\ }
+\DoxyCodeLine{01685\ \ \ \ \ \ \ msgbtn\_types\ btns\ =\ msgbtn\_types::MsgBtnOK,}
+\DoxyCodeLine{01686\ \ \ \ \ \ \ msgicon\_types\ icon\ =\ msgicon\_types::MsgIcnNone,}
+\DoxyCodeLine{01687\ \ \ \ \ \ \ msgdefbtn\_vals\ defbtn\ =\ msgdefbtn\_vals::MsgDefBtn1)\ =\ 0;}
+\DoxyCodeLine{01711\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ guiGetFont(CString\&\ strFontName,\ \textcolor{keywordtype}{float}\&\ fPointSize,\ font\_styles\&\ nStyleFlags)=0;}
+\DoxyCodeLine{01712\ \ \ \};}
+\DoxyCodeLine{01713\ \textcolor{preprocessor}{\#if\ LIBGRAPH2\_LEVEL\ ==\ 3\ ||\ defined(LIBGRAPH2\_EXPORTS)}}
+\DoxyCodeLine{01714\ \ \ \textcolor{comment}{//\ Cette\ classe\ est\ exportée\ de\ LibGraph2.dll}}
+\DoxyCodeLine{01728\ \ \ \textcolor{keyword}{class\ }LIBGRAPH2\_API\ ILibGraph2\_Adv\ :\ \textcolor{keyword}{virtual}\ \textcolor{keyword}{public}\ ILibGraph2\_Com}
+\DoxyCodeLine{01729\ \ \ \{}
+\DoxyCodeLine{01730\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01731\ \ \ \ \ \textcolor{comment}{//fonctions\ accessibles\ uniquement\ au\ niveau\ avancé}}
+\DoxyCodeLine{01748\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawPolylines(CPoint*\ pPoints,\ \textcolor{keywordtype}{int}\ nNbPoints,\ \textcolor{keywordtype}{bool}\ bAutoClose=\textcolor{keyword}{false})=0;}
+\DoxyCodeLine{01749\ }
+\DoxyCodeLine{01770\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ guiGetFileName(CString\&\ sFileName,\ \textcolor{keywordtype}{bool}\ bOpen\ =\ \textcolor{keyword}{true},\ CString*\ pstrFileTypes\ =\ NULL,\ \textcolor{keywordtype}{int}\ nNbFileTypes\ =\ 0)=0;}
+\DoxyCodeLine{01771\ }
+\DoxyCodeLine{01772\ \ \ \};}
+\DoxyCodeLine{01773\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01774\ \textcolor{preprocessor}{\#if\ LIBGRAPH2\_LEVEL\ >\ 3\ ||\ defined(LIBGRAPH2\_EXPORTS)}}
+\DoxyCodeLine{01775\ \ \ \textcolor{comment}{//\ Cette\ classe\ est\ exportée\ de\ LibGraph2.dll}}
+\DoxyCodeLine{01789\ \ \ \textcolor{keyword}{class\ }LIBGRAPH2\_API\ ILibGraph2\_Exp\ :\ \textcolor{keyword}{virtual}\ \textcolor{keyword}{public}\ ILibGraph2\_Com}
+\DoxyCodeLine{01790\ \ \ \{}
+\DoxyCodeLine{01791\ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{01792\ \ \ \ \ \textcolor{comment}{//fonctions\ de\ niveau\ Expert\ (inaccessible\ si\ niveau\ avancé)}}
+\DoxyCodeLine{01808\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ drawPolylines(\textcolor{keyword}{const}\ std::vector<CPoint>\&\ vPoints,\ \textcolor{keywordtype}{bool}\ bAutoClose=\textcolor{keyword}{false})=0;}
+\DoxyCodeLine{01809\ }
+\DoxyCodeLine{01828\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ guiGetFileName(CString\&\ sFileName,\ \textcolor{keywordtype}{bool}\ bOpen\ =\ \textcolor{keyword}{true},\ \textcolor{keyword}{const}\ std::vector<CString>\&\ vstrFileTypes\ =\ std::vector<CString>())=0;}
+\DoxyCodeLine{01829\ \ \ \};}
+\DoxyCodeLine{01830\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01831\ }
+\DoxyCodeLine{01832\ \textcolor{preprocessor}{\#if\ LIBGRAPH2\_LEVEL\ ==\ 3\ ||\ defined(LIBGRAPH2\_EXPORTS)}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01851\ \ \ LIBGRAPH2\_API\ ILibGraph2\_Adv*\ GetLibGraph2Adv(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01852\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01853\ \textcolor{preprocessor}{\#if\ LIBGRAPH2\_LEVEL\ ==\ 4\ ||\ defined(LIBGRAPH2\_EXPORTS)}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01872\ \ \ LIBGRAPH2\_API\ ILibGraph2\_Exp*\ GetLibGraph2Exp(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01873\ \textcolor{preprocessor}{\#endif}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01889\ \textcolor{preprocessor}{\#if\ LIBGRAPH2\_LEVEL\ ==\ 3}}
+\DoxyCodeLine{01890\ \textcolor{preprocessor}{\#define\ GetLibGraph2\ GetLibGraph2Adv}}
+\DoxyCodeLine{01891\ \textcolor{preprocessor}{\#else\ if\ LIBGRAPH2\_LEVEL\ ==\ 4}}
+\DoxyCodeLine{01892\ \textcolor{preprocessor}{\#define\ GetLibGraph2\ GetLibGraph2Exp}}
+\DoxyCodeLine{01893\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01894\ \textcolor{preprocessor}{\#endif}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01905\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{void}\ ReleaseLibGraph2(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01906\ }
+\DoxyCodeLine{01925\ \ \ LIBGRAPH2\_API\ ARGB\ MakeARGB(BYTE\ a,\ BYTE\ r,\ BYTE\ g,\ BYTE\ b);}
+\DoxyCodeLine{01939\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ GetA(ARGB\ c);}
+\DoxyCodeLine{01953\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ GetR(ARGB\ c);}
+\DoxyCodeLine{01967\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ GetG(ARGB\ c);}
+\DoxyCodeLine{01981\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ GetB(ARGB\ c);}
+\DoxyCodeLine{01982\ }
+\DoxyCodeLine{01983\ \ \ LIBGRAPH2\_API\ std::ostream\&\ operator<<(std::ostream\&\ out,\ \textcolor{keyword}{const}\ std::wstring\&\ str);}
+\DoxyCodeLine{01984\ }
+\DoxyCodeLine{01985\ }
+\DoxyCodeLine{01986\ \textcolor{comment}{//Fonctions\ accessibles\ uniquement\ au\ niveau\ Novice}}
+\DoxyCodeLine{01987\ \textcolor{preprocessor}{\#if\ LIBGRAPH2\_LEVEL\ ==\ 0\ ||\ defined(LIBGRAPH2\_EXPORTS)}\textcolor{preprocessor}{}}
+\DoxyCodeLine{02011\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{bool}\ waitForEvent();}
+\DoxyCodeLine{02024\ \ \ LIBGRAPH2\_API\ evt\_type\ getLastEventType();}
+\DoxyCodeLine{02042\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{int}\ getLastEventKeyCode();}
+\DoxyCodeLine{02055\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{int}\ getLastEventMouseX();}
+\DoxyCodeLine{02068\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{int}\ getLastEventMouseY();}
+\DoxyCodeLine{02069\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{02070\ }
+\DoxyCodeLine{02071\ \textcolor{comment}{//Fonctions\ accessibles\ uniquement\ au\ niveau\ Débutant}}
+\DoxyCodeLine{02072\ \textcolor{preprocessor}{\#if\ LIBGRAPH2\_LEVEL\ ==\ 1\ ||\ defined(LIBGRAPH2\_EXPORTS)}}
+\DoxyCodeLine{02073\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{02074\ }
+\DoxyCodeLine{02075\ \textcolor{comment}{//Fonctions\ accessibles\ uniquement\ au\ niveau\ Intermédiaire}}
+\DoxyCodeLine{02076\ \textcolor{preprocessor}{\#if\ LIBGRAPH2\_LEVEL\ ==\ 2\ ||\ defined(LIBGRAPH2\_EXPORTS)}\textcolor{preprocessor}{}}
+\DoxyCodeLine{02093\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{void}\ drawPolylines(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ pXs,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ pYs,\ \textcolor{keywordtype}{int}\ nNbPoints,\ \textcolor{keywordtype}{bool}\ bAutoClose=\textcolor{keyword}{false});}
+\DoxyCodeLine{02094\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{02095\ }
+\DoxyCodeLine{02096\ \textcolor{comment}{//Fonctions\ communes\ aux\ niveaux\ Novice\ et\ Débutant}}
+\DoxyCodeLine{02097\ \textcolor{preprocessor}{\#if\ LIBGRAPH2\_LEVEL\ <=\ 1\ ||\ defined(LIBGRAPH2\_EXPORTS)}}
+\DoxyCodeLine{02098\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{02099\ }
+\DoxyCodeLine{02100\ \textcolor{comment}{//Fonctions\ communes\ aux\ niveaux\ Novice,\ Débutant\ et\ Intermédiaire}}
+\DoxyCodeLine{02101\ \textcolor{preprocessor}{\#if\ LIBGRAPH2\_LEVEL\ <=\ 2\ ||\ defined(LIBGRAPH2\_EXPORTS)}\textcolor{preprocessor}{}}
+\DoxyCodeLine{02126\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{void}\ show(\textcolor{keywordtype}{float}\ fWidth=0,\ \textcolor{keywordtype}{float}\ fHeight=0,\ \textcolor{keywordtype}{bool}\ bFullScreen=\textcolor{keyword}{false});}
+\DoxyCodeLine{02137\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{void}\ hide();}
+\DoxyCodeLine{02151\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{float}\ getWidth();}
+\DoxyCodeLine{02165\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{float}\ getHeight();}
+\DoxyCodeLine{02182\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{void}\ showConsole();}
+\DoxyCodeLine{02192\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{void}\ hideConsole();}
+\DoxyCodeLine{02202\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{void}\ askForRefresh();}
+\DoxyCodeLine{02231\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{void}\ beginPaint();}
+\DoxyCodeLine{02242\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{void}\ endPaint();}
+\DoxyCodeLine{02243\ }
+\DoxyCodeLine{02258\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{void}\ setPen(ARGB\ color,\ \textcolor{keywordtype}{float}\ fWidth,\ pen\_DashStyles\ style\ =\ pen\_DashStyles::Solid);}
+\DoxyCodeLine{02271\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{void}\ setSolidBrush(ARGB\ color);}
+\DoxyCodeLine{02272\ }
+\DoxyCodeLine{02288\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{void}\ drawEllipse(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ fWidth,\ \textcolor{keywordtype}{float}\ fHeight);}
+\DoxyCodeLine{02306\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{void}\ drawArc(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ fWidth,\ \textcolor{keywordtype}{float}\ fHeight,\ \textcolor{keywordtype}{float}\ startAngle,\ \textcolor{keywordtype}{float}\ sweepAngle);}
+\DoxyCodeLine{02324\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{void}\ drawPie(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ fWidth,\ \textcolor{keywordtype}{float}\ fHeight,\ \textcolor{keywordtype}{float}\ startAngle,\ \textcolor{keywordtype}{float}\ sweepAngle);}
+\DoxyCodeLine{02340\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{void}\ drawLine(\textcolor{keywordtype}{float}\ x1,\ \textcolor{keywordtype}{float}\ y1,\ \textcolor{keywordtype}{float}\ x2,\ \textcolor{keywordtype}{float}\ y2);}
+\DoxyCodeLine{02356\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{void}\ drawRectangle(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ fWidth,\ \textcolor{keywordtype}{float}\ fHeight);}
+\DoxyCodeLine{02357\ }
+\DoxyCodeLine{02373\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{void}\ setPixel(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ ARGB\ color);}
+\DoxyCodeLine{02393\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{void}\ drawBitmap(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ sFileName,\ \textcolor{keywordtype}{float}\ fPosX,\ \textcolor{keywordtype}{float}\ fPosY,\ \textcolor{keywordtype}{double}\ dScaleFactor\ =\ 1.0,\ \textcolor{keywordtype}{double}\ dAngleDeg=0,\ \textcolor{keywordtype}{bool}\ bXYIsCenter=\textcolor{keyword}{false});}
+\DoxyCodeLine{02411\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{void}\ drawBitmap(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ sFileName,\ \textcolor{keywordtype}{float}\ fPosX,\ \textcolor{keywordtype}{float}\ fPosY,\ \textcolor{keywordtype}{float}\ fPosPivotX,\ \textcolor{keywordtype}{float}\ fPosPivotY,\ \textcolor{keywordtype}{double}\ dScaleFactor,\ \textcolor{keywordtype}{double}\ dAngleDeg);}
+\DoxyCodeLine{02412\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{02413\ }
+\DoxyCodeLine{02414\ \textcolor{comment}{//Fonctions\ communes\ aux\ niveaux\ Débutant\ et\ Intermédiaire}}
+\DoxyCodeLine{02415\ \textcolor{preprocessor}{\#if\ (LIBGRAPH2\_LEVEL\ >=\ 1\ \&\&\ LIBGRAPH2\_LEVEL\ <=\ 2)\ ||\ defined(LIBGRAPH2\_EXPORTS)}\textcolor{preprocessor}{}}
+\DoxyCodeLine{02461\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{bool}\ waitForEvent(evt\_type\&\ evtType,\ \textcolor{keywordtype}{int}\&\ evtKeyCode,\ \textcolor{keywordtype}{int}\&\ evtMouseX,\ \textcolor{keywordtype}{int}\&\ evtMouseY);}
+\DoxyCodeLine{02462\ \ \ }
+\DoxyCodeLine{02479\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{bool}\ guiGetColor(ARGB\&\ color);}
+\DoxyCodeLine{02501\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{bool}\ guiGetPenStyle(ARGB\&\ color,\ \textcolor{keywordtype}{float}\&\ fWidth,\ pen\_DashStyles\&\ style);}
+\DoxyCodeLine{02517\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{bool}\ guiGetValue(\textcolor{keywordtype}{int}\&\ nVal,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ strTitle=\textcolor{stringliteral}{"{}"{}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ strLabel=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{02533\ \ \ LIBGRAPH2\_API\ \textcolor{keywordtype}{bool}\ guiGetValue(\textcolor{keywordtype}{double}\&\ dVal,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ strTitle=\textcolor{stringliteral}{"{}"{}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ strLabel=\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{02552\ \ \ LIBGRAPH2\_API\ msgbtn\_answer\ guiMessageBox(}
+\DoxyCodeLine{02553\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ strTitle\ =\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{02554\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ strText\ =\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{02555\ \ \ \ \ msgbtn\_types\ btns\ =\ msgbtn\_types::MsgBtnOK,}
+\DoxyCodeLine{02556\ \ \ \ \ msgicon\_types\ icon\ =\ msgicon\_types::MsgIcnNone,}
+\DoxyCodeLine{02557\ \ \ \ \ msgdefbtn\_vals\ defbtn\ =\ msgdefbtn\_vals::MsgDefBtn1);}
+\DoxyCodeLine{02558\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{02559\ \}}
+\DoxyCodeLine{02560\ }
+\DoxyCodeLine{02561\ \textcolor{preprocessor}{\#pragma\ warning(pop)}}
+\DoxyCodeLine{02562\ }
+
+\end{DoxyCode}
