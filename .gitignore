@@ -66,5 +66,5 @@ __pycache__/
 .clangd/
 clangd-index/
 
-# Ignore x64/Debug folder
-x64/Debug/
+# Ignore TP 13bis/x64/Debug folder
+TP 13bis/x64/Debug/
